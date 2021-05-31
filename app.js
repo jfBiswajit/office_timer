@@ -3,7 +3,7 @@ function addHoursToDate(date, minutesToAdd) {
 }
 
 let officeHoursInMinute = 525;
-let startWorkingAt = '08:53:30';
+let startWorkingAt = '08:41:15';
 
 let today = new Date();
 today = (today.getMonth()+1) + ' ' +  today.getDate() + ' ' + today.getFullYear();
@@ -12,10 +12,8 @@ today = (today.getMonth()+1) + ' ' +  today.getDate() + ' ' + today.getFullYear(
 let startedAt = new Date(`${today} ${startWorkingAt} GMT+0600`);
 let endAt = addHoursToDate(startedAt, officeHoursInMinute);
 
-// pococ poco
 var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
-// Update the count down every 1 second
 var x = setInterval(function() {
   var now = new Date().getTime();
   var distance = endAt - now;
@@ -25,9 +23,8 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  console.log(days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ');
+  document.getElementById('show_time').innerHTML = `${hours}h:${minutes}m:${seconds}s`;
     
-  // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
     console.log('EXPIRED');
