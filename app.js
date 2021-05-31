@@ -28,11 +28,11 @@ var x = setInterval(function() {
   }
   
   if (minutes < 10) {
-    minutes = '0' + hours;
+    minutes = '0' + minutes;
   }
   
   if (seconds < 10) {
-    seconds = '0' + hours;
+    seconds = '0' + seconds;
   }
     
   document.getElementById('show_time').innerHTML = `${hours}h:${minutes}m:${seconds}s`;
