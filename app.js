@@ -3,7 +3,7 @@ function addHoursToDate(date, minutesToAdd) {
 }
 
 let officeHoursInMinute = 525;
-let startWorkingAt = '08:41:15';
+let startWorkingAt = '09:11:18';
 
 let today = new Date();
 today =
@@ -41,6 +41,9 @@ let clock = setInterval(function () {
 
   if (distance < 0) {
     clearInterval(clock);
-    console.log('EXPIRED');
+    console.log('Experied');
+    document.getElementById(
+      'show_time'
+    ).innerHTML = `00h:00m:00s`;
   }
 }, 1000);
