@@ -3,7 +3,7 @@ function addHoursToDate(date, minutesToAdd) {
 }
 
 let officeHoursInMinute = 525;
-let startWorkingAt = '08:42:58';
+let startWorkingAt = '08:56:05';
 
 let today = new Date();
 today =
