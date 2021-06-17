@@ -52,7 +52,7 @@ const SetTimmer = () => {
 
 const app = {
   init: function () {
-    SetTimmer();
+    // SetTimmer();
   },
 };
 
