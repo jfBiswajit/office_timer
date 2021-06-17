@@ -1,3 +1,13 @@
 body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+#start_time {
+  width: 20%;
+}
+
+#start_time button {
+  display: block;
+  margin-top: 0.8rem;
+  text-align: center;
+}
