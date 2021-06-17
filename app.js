@@ -2,9 +2,8 @@ const addHoursToDate = (date, minutesToAdd) => {
   return (futureDate = new Date(date.getTime() + minutesToAdd * 60000));
 };
 
-const SetTimmer = (startedAt) => {
+const SetTimmer = (startWorkingAt) => {
   let officeHoursInMinute = 525;
-  let startWorkingAt = startedAt;
 
   let today = new Date();
   today =
@@ -79,9 +78,12 @@ function getWithExpiry(key) {
 
 const setOffTimeToLocal = () => {
   document.getElementById('start_time').addEventListener('submit', (e) => {
+    const form = document.getElementById('start_time');
     e.preventDefault();
     const officeStartedAt = document.getElementById('in_start_time').value;
     setWithExpiry('started_at', officeStartedAt);
+    SetTimmer(officeStartedAt);
+    form.style.display = 'none';
   });
 };
 
@@ -89,18 +91,11 @@ const enableOrDisableForm = () => {
   const form = document.getElementById('start_time');
   if (getWithExpiry('started_at')) {
     form.style.display = 'none';
-    SetTimmer('08:50:40');
+    SetTimmer(getWithExpiry('started_at'));
   } else {
     form.style.display = 'block';
   }
 };
 
-const app = {
-  init: function () {
-    SetTimmer('08:50:40');
-    setOffTimeToLocal();
-    enableOrDisableForm();
-  },
-};
-
-app.init();
+setOffTimeToLocal();
+enableOrDisableForm();
