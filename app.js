@@ -1,6 +1,7 @@
-function addHoursToDate(date, minutesToAdd) {
+const addHoursToDate = (date, minutesToAdd) => {
   return (futureDate = new Date(date.getTime() + minutesToAdd * 60000));
 }
+
 
 let officeHoursInMinute = 525;
 let startWorkingAt = '08:56:05';
