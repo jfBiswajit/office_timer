@@ -1,12 +1,13 @@
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg, #eb5c09, #c90953, #0d80aa, #0daa85);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
   font-family: Verdana,
     Geneva,
     Tahoma,
     sans-serif;
   background-repeat: no-repeat;
+  padding: 0.5rem;
 }
 
 @keyframes gradient {
@@ -27,6 +28,7 @@ body {
 #show_time {
   color: #fff;
   text-align: center;
+  font-size: 3rem;
 }
 
 .d-flex {
