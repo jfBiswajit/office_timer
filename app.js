@@ -2,6 +2,16 @@ const addHoursToDate = (date, minutesToAdd) => {
   return (futureDate = new Date(date.getTime() + minutesToAdd * 60000));
 };
 
+const showNotification = () => {
+  chrome.notifications.create('test', {
+    type: 'basic',
+    iconUrl: './assets/icons/icon.png',
+    title: 'Congratulations!',
+    message: "You have successfully done today's office",
+    priority: 2,
+  });
+}
+
 const SetTimmer = (startWorkingAt) => {
   let officeHoursInMinute = 525;
 
@@ -11,8 +21,6 @@ const SetTimmer = (startWorkingAt) => {
 
   let startedAt = new Date(`${today} ${startWorkingAt} GMT+0600`);
   let endAt = addHoursToDate(startedAt, officeHoursInMinute);
-
-  let countDownDate = new Date('Jan 5, 2022 15:37:25').getTime();
 
   let clock = setInterval(function () {
     let now = new Date().getTime();
@@ -45,6 +53,7 @@ const SetTimmer = (startWorkingAt) => {
       clearInterval(clock);
       console.log('Experied');
       document.getElementById('show_time').innerHTML = `00h:00m:00s`;
+      showNotification();
     }
   }, 1000);
 };
@@ -96,14 +105,6 @@ const enableOrDisableForm = () => {
     form.style.display = 'block';
   }
 };
-
-chrome.notifications.create('test', {
-  type: 'basic',
-  iconUrl: './assets/icons/icon.png',
-  title: 'Congratulations!',
-  message: "You have successfully done today's office",
-  priority: 2,
-});
 
 setOffTimeToLocal();
 enableOrDisableForm();
