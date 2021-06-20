@@ -97,5 +97,13 @@ const enableOrDisableForm = () => {
   }
 };
 
+chrome.notifications.create('test', {
+  type: 'basic',
+  iconUrl: './assets/icons/icon.png',
+  title: 'Congratulations!',
+  message: "You have successfully done today's office",
+  priority: 2,
+});
+
 setOffTimeToLocal();
 enableOrDisableForm();

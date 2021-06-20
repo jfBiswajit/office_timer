@@ -11,6 +11,6 @@
     "64": "./assets/icons/icon.png",
     "128": "./assets/icons/icon.png"
   },
-
+  "permissions": ["notifications"],
   "content_security_policy": "script-src 'self' https://unpkg.com ; object-src 'self'"
 }
