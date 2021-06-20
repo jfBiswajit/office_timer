@@ -1,13 +1,23 @@
 body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-repeat: no-repeat;
+  height: 30vh;
 }
 
-#start_time {
-  width: 20%;
-}
-
-#start_time button {
-  display: block;
-  margin-top: 0.8rem;
+#show_time {
+  color: #fff;
   text-align: center;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.d-flex * {
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 0.2rem;
+  border: 1px solid #fff;
 }
